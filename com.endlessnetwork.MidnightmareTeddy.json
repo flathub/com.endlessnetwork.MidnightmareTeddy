@@ -1,16 +1,17 @@
 {
     "app-id": "com.endlessnetwork.MidnightmareTeddy",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "21.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "com.endlessnetwork.MidnightmareTeddy.sh",
     "separate-locales": false,
-    "build-options" : {
+    "build-options": {
         "no-debuginfo": true,
         "strip": true
     },
     "finish-args": [
-        "--share=ipc", "--socket=x11",
+        "--share=ipc",
+        "--socket=x11",
         "--socket=pulseaudio",
         "--device=dri"
     ],
@@ -18,7 +19,9 @@
         {
             "name": "MidnightmareTeddy",
             "buildsystem": "simple",
-            "only-arches": ["x86_64"],
+            "only-arches": [
+                "x86_64"
+            ],
             "build-commands": [
                 "install -D com.endlessnetwork.MidnightmareTeddy.sh /app/bin/com.endlessnetwork.MidnightmareTeddy.sh",
                 "install -Dm644 com.endlessnetwork.MidnightmareTeddy.desktop /app/share/applications/com.endlessnetwork.MidnightmareTeddy.desktop",
@@ -28,10 +31,8 @@
                 "unzip MidnightmareTeddy.zip",
                 "install -D MidnightmareTeddy/MidnightmareTeddy.x86_64 /app/bin/MidnightmareTeddy.x86_64",
                 "mv MidnightmareTeddy/MidnightmareTeddy_Data /app/bin/"
-                
             ],
-            "sources" : [
-
+            "sources": [
                 {
                     "type": "script",
                     "commands": [
@@ -42,18 +43,14 @@
                 {
                     "type": "git",
                     "url": "https://github.com/endless-network/MidnightmareTeddy_Binary.git",
-                    "commit": "e958231910381a1a876fc7d8ebee2c33162d4b86"
+                    "commit": "b701b186646ba7fd15756f72a9c8d7aaccf6e8b1"
                 },
                 {
                     "type": "file",
                     "url": "https://github.com/endless-network/MidnightmareTeddy_Binary/releases/download/v1.0/MidnightmareTeddy.zip",
-                    "sha256":"182770261f2f33ec7f7088bc596dbdc51332202e1c17bcc1af2929d817b17842"
+                    "sha256": "182770261f2f33ec7f7088bc596dbdc51332202e1c17bcc1af2929d817b17842"
                 }
-
-
-
             ]
         }
-        
     ]
 }
